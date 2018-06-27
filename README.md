@@ -6,4 +6,4 @@
 前端页面-jsp+easyui<br>
 服务器-tomcat<br>
 
-如需数据库sql文件可与本人联系
+数据库sql文件暂不提供
