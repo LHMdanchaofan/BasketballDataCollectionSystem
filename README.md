@@ -3,5 +3,5 @@
 
 服务器端代码-java<br>
 数据库-mysql<br>
-前端页面jsp+easyui<br>
-服务器tomcat<br>
+前端页面-jsp+easyui<br>
+服务器-tomcat<br>
