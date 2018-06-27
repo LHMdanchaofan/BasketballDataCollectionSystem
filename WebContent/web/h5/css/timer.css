@@ -1,0 +1,10 @@
+body{margin:0;padding:0;}
+.box{margin:10px auto;width:300px;border:1}
+#showtime{margin:20px;margin-bottom: 20px;text-align: center;}
+span{font-size: 30px;}
+button{width:50px;height:50px;border-radius: 50px;border:0;outline:none ;margin:0 48px;font-size:24px;}
+#record{margin-top:20px;}
+#record div{width:200px;height:30px;border-bottom:1px dotted #666;}
+#record span{font-size:10px;}
+.left{float:left;}
+.right{float:right;}

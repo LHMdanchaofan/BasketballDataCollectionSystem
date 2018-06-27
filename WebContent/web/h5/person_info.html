@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <title>个人资料</title>
+        <link rel="stylesheet" href="fonts/iconfont.css"/>
+        <link rel="stylesheet" href="css/font.css"/>
+        <link rel="stylesheet" href="css/weui.min.css"/>
+        <link rel="stylesheet" href="css/jquery-weui.min.css"/>
+        <link rel="stylesheet" href="css/mui.css"/>
+        <link rel="stylesheet" href="css/animate.css"/>
+        <link rel="stylesheet" href="css/pages/person_info.css"/>
+        <script type="text/javascript" src="../custom/jquery.min.js"></script>
+       <script>
+       $(function(){
+    	   $.post("../../getMyUserInformation",function(result){
+    		   $('#username').text(result.username);
+    		   if(result.identity==1){
+    			   $('#identity').text("学员");
+    		   }else if(result.identity==2){
+    			   $('#identity').text("教练");
+    		   }else if(result.identity==3){
+    			   $('#identity').text("训练中心");
+    		   }else if(result.identity==4){
+    			   $('#identity').text("管理员");
+    		   }
+    		   //$('#identity').text(result.username);
+    		   //console.info(result.username);
+    		   //console.info(result.identity);
+    	   },'json')
+       })
+        (function (doc, win) {
+          var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+              var clientWidth = docEl.clientWidth;
+              if (!clientWidth) return;
+              docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+
+          if (!doc.addEventListener) return;
+          win.addEventListener(resizeEvt, recalc, false);
+          doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+        
+        function setImagePreview() {   
+        	    var docObj=document.getElementById("doc");   
+        	    var imgObjPreview=document.getElementById("preview");   
+        	  if(docObj.files && docObj.files[0]){   
+        	    //火狐下，直接设img属性   
+        	    imgObjPreview.style.display = 'block';   
+        	    imgObjPreview.style.width = '180px';   
+        	    imgObjPreview.style.height = '200px';   
+        	    //imgObjPreview.src = docObj.files[0].getAsDataURL();   
+        	    //火狐7以上版本不能用上面的getAsDataURL()方式获取，需要一下方式   
+        	    imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);   
+        	  }else{   
+        	    //IE下，使用滤镜   
+        	    docObj.select();   
+        	    var imgSrc = document.selection.createRange().text;   
+        	    var localImagId = document.getElementById("localImag");   
+        	    //必须设置初始大小   
+        	    localImagId.style.width = "180px";   
+        	    localImagId.style.height = "200px";   
+        	    //图片异常的捕捉，防止用户修改后缀来伪造图片   
+        	    try{   
+        	      localImagId.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";  
+        	      localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;   
+        	    }catch(e){   
+        	      alert("您上传的图片格式不正确，请重新选择!");   
+        	      return false;   
+        	    }   
+        	    imgObjPreview.style.display = 'none';   
+        	    document.selection.empty();   
+        	  }   
+        	  return true;   
+        	}   
+        	function confirm(){
+        		document.getElementById("fm").submit();
+        	}
+        	function back(){
+            	window.history.back(-1); 
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="titlebar reverse">
+                <a href="javascript:back()">
+                    <i class="iconfont">&#xe640;</i>
+                </a>
+                <h1>账号资料</h1>
+            </div>
+        </header>
+        <article style="bottom: 54px;">
+            <div class="weui_cells weui_cells_access animated fadeInRight">
+            <div align=center>
+            <div id="localImag" style="border-style:solid; border-width:1px; border-color:#000;width: 180px;height:200px">
+              <img id="preview" width=-1 height=-1 style="diplay:none"/>
+            </div>
+            <form id="fm" method="post" action="../../upLoad" enctype="multipart/form-data">
+               <input type="file" name="doc" id="doc" onchange="javascript:setImagePreview();">
+            </form>
+            </div>
+              <a class="weui_cell" href="javascript:;">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <div class="weui-row weui-no-gutter">
+                        <div class="label weui-col-20">用户名:</div>
+                        <div id="username" class="weui-col-80" style="position:relative;left:400px"></div>
+                    </div>
+                </div>
+              </a>
+              <a class="weui_cell" href="javascript:;">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <div class="weui-row weui-no-gutter">
+                        <div class="label weui-col-20">用户类型:</div>
+                        <div id="identity" class="weui-col-80" style="position:relative;left:400px"></div>
+                    </div>
+                </div>
+              </a>
+            </div>
+            <div class="button">
+                <div class="bd">
+                    <a href="javascript:confirm();" class="weui_btn weui_btn_primary">确认变更</a>
+                </div>
+            </div>
+        </article>
+    </body>
+</html>

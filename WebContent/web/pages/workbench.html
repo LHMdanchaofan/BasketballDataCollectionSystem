@@ -1,0 +1,629 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>工作台</title> 
+<link href="css/base.css" rel="stylesheet">
+<link rel="stylesheet" href="../custom/uimaker/easyui.css">
+<link rel="stylesheet" href="css/workbench.css">
+<link rel="icon" href="https://static.jianshukeji.com/hcode/images/favicon.ico">
+<script type="text/javascript" src="../custom/jquery.min.js"></script>
+<script type="text/javascript" src="../custom/jquery.easyui.min.js"></script>
+<script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+<script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script> 
+<script src="http://cdn.hcharts.cn/highmaps/modules/map.js"></script> 
+<script src="https://img.hcharts.cn/highcharts/modules/drilldown.js"></script>
+<script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+</head> 
+<body>
+    <div class="container">
+        <div id="hd">
+            
+        </div>
+
+        <div id="bd">
+            <div class="bd-content">
+                <div class="right-zone">
+                    <div id="news" class="inform item-box">
+                        <div class="inform-hd">
+                            <label>篮球新闻</label>
+                            <a href="news.jsp">更多<span>&gt;</span></a>
+                        </div>
+                        <ul>
+                            <li>
+                                <span></span>
+                                <a id="news0" href="javascript:;" class="ellipsis"><i></i></a>
+                                <label id="news0"></label>
+                            </li>
+                            <li>
+                                <span></span>
+                                <a id="news1" href="javascript:;" class="ellipsis"><i></i></a>
+                                <label id="news1"></label>
+                            </li>
+                            <li>
+                                <span></span>
+                                <a id="news2" href="javascript:;" class="ellipsis"></a>
+                                <label id="news2"></label>
+                            </li>
+                            <li>
+                                <span></span>
+                                <a id="news3" href="javascript:;" class="ellipsis"></a>
+                                <label id="news3"></label>
+                            </li>
+                            <li>
+                                <span></span>
+                                <a id="news4" href="javascript:;" class="ellipsis"></a>
+                                <label id="news4"></label>
+                            </li>
+                            <li>
+                                <span></span>
+                                <a id="news5" href="javascript:;" class="ellipsis"></a>
+                                <label id="news5"></label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="display" class="attached item-box">
+                        <div class="inform-hd">
+                            <label>本周推荐</label>
+                        </div>
+                        <div class="attached-tab">
+                            <a href="javascript:;" class="current item-left" attached="public-attached">推荐俱乐部</a>
+                            <a href="javascript:;" class="item-right" attached="inner-attached">推荐教练</a>
+                        </div>
+                        <ul class="public-attached">
+                            <li>
+                                <span></span>
+                                <a id="clubdisplay0" href="" class="ellipsis"></a>
+                            </li>
+                           <li>
+                              <span></span>
+                                 <a id="clubdisplay1" href="" class="ellipsis"></a>
+                             </li>
+                            <li>
+                              <span></span>
+                                 <a id="clubdisplay2" href="" class="ellipsis"></a>
+                             </li>
+                            <li>
+                              <span></span>
+                                 <a id="clubdisplay3" href="" class="ellipsis"></a>
+                             </li>
+                             <li>
+                              <span></span>
+                                 <a id="clubdisplay4" href="" class="ellipsis"></a>
+                             </li>
+                           <li>
+                              <span></span>
+                                 <a id="clubdisplay5" href="" class="ellipsis"></a>
+                             </li>
+                        </ul>
+                        <ul class="inner-attached hide">
+                           <li>
+                                <span></span>
+                                <a id="coachdisplay0" href="" class="ellipsis"></a>
+                            </li>
+                            <li>
+                                <span></span>
+                                <a id="coachdisplay1" href="" class="ellipsis"></a>
+                            </li>
+                            <li>
+                                <span></span>
+                                <a id="coachdisplay2" href="" class="ellipsis"></a>
+                            </li>
+                            <li>
+                                <span></span>
+                                <a id="coachdisplay3" href="" class="ellipsis"></a>
+                            </li>
+                            <li>
+                                <span></span>
+                                <a id="coachdisplay4" href="" class="ellipsis"></a>
+                            </li>
+                            <li>
+                                <span></span>
+                                <a id="coachdisplay5" href="" class="ellipsis"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="height:13px"></div>
+                    <div id="friendforum" class="price item-box">
+                        <div class="inform-hd">
+                            <label>友情论坛</label>
+                            <a href="moreforum.jsp">更多<span>&gt;</span></a>
+                        </div>
+                        <ul>
+                            <li>
+                                <span></span>
+                                <a id="friendforum0" href="" class="ellipsis" target="_Blank"></a>
+                            </li>
+                            <li>
+                                <span></span>
+                                <a id="friendforum1" href="" class="ellipsis" target="_Blank"></a>
+                            </li>
+                            <li>
+                                <span></span>
+                                <a id="friendforum2" href="" class="ellipsis" target="_Blank"></a>
+                            </li>
+                            <li> 
+                                <span></span>
+                                <a id="friendforum3" href="" class="ellipsis" target="_Blank"></a>
+                            </li>
+                            <li>
+                                <span></span>
+                                <a id="friendforum4" href="" class="ellipsis" target="_Blank"></a>
+                            </li>
+                            <li>
+                                <span></span>
+                                <a id="friendforum5" href="" class="ellipsis" target="_Blank"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                <div class="center-part">
+                    <div class="center-items todo">
+                        <div class="calendar-part">
+                             <div class="easyui-calendar" disabled="true" style="width:205px;height:231px;" data-options="
+			             validator: function(date){
+			             var myDate = new Date();
+			            if (date.getYear() == myDate.getYear() ){
+			                if(date.getMonth()==myDate.getMonth()){
+			                   if(parseInt(date.getDate()/7)==parseInt(myDate.getDate()/7)){
+			                     if(date.getDay()==myDate.getDay()){
+			                      return true;
+			                      }else{
+			                      return false;
+			                      }
+			                     }else{
+			                     return false;
+			                     }
+			                }else{
+			                  return false;
+			                }
+				      	 
+				        } else {
+					     return false;
+				           }}">
+                     </div>
+                        </div>                             
+                            <iframe width="100%" height="100%" src="notice_detail.html">
+                            </iframe>
+                        
+                 </div> 
+                    <div class="center-items chart0 clearfix">
+                        <div class="chart0-item">
+                            <div class="item-inner">
+                                <div class="item-content">
+                                    <div class="content-hd">全国学员位置分布</div>
+                                    <div class="chart-chart" id="chart1"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart0-item">
+                            <div class="item-inner">
+                                <div class="item-content">
+                                    <div class="content-hd">全国学员年龄分布</div>
+                                    <div class="chart-chart" id="chart3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="center-items chart1">
+                        <div class="chart1-inner">
+                             <div class="item-hd">半年度全国训练数据统计</div>
+                             <div class="chart1-chart" id="chart2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>          
+    </div>
+    <div id="clubdlg" class="easyui-dialog" data-options="
+                title: '详细信息',
+	            width:750,
+	            height:300,
+	            closed:true,
+	            closable:true,
+	            modal:true,
+				iconCls: 'icon-edit'">
+	<div class="container">
+      <div class="content" style="width:740px">
+		      <div title="基本信息" data-options="closable:false" class="basic-info">
+		      	<div class="column" ><span class="current"><font size="4" color="OrangeRed">基本信息</font></span></div>
+		      	<table class="kv-table">
+					<tbody>
+						<tr>
+							<td class="kv-label">训练中心</td>
+							<td class="kv-content" id="clubname"></td>
+							<td class="kv-label">联系方式</td>
+							<td class="kv-content" id="clubphonenumber"></td>
+						</tr>
+						<tr>
+							<td class="kv-label">email</td>
+							<td class="kv-content" id="clubemail"></td>
+							<td class="kv-label">省份</td>
+							<td class="kv-content" id="clubprovince"></td>
+						</tr>
+						<tr>
+							<td class="kv-label">地址</td>
+							<td class="kv-content" id="clubaddress"></td>
+							<td class="kv-label">官方网站</td>
+							<td class="kv-content" id="website"></td>
+						</tr>
+						<tr>
+							<td class="kv-label">教练人数`</td>
+							<td class="kv-content" id="clubcoanum"></td>
+							<td class="kv-label">学员人数</td>
+							<td class="kv-content" id="clubstunum"></td>
+						</tr>
+					</tbody>
+				</table>
+	    </div>
+      </div>
+     </div>
+    </div>
+    <div id="coadlg" class="easyui-dialog" data-options="
+                title: '详细信息',
+	            width:750,
+	            height:250,
+	            closed:true,
+	            closable:true,
+	            modal:true,
+				iconCls: 'icon-edit'">
+	<div class="container">
+      <div class="content" style="width:740px">
+		      <div title="基本信息" data-options="closable:false" class="basic-info">
+		      	<div class="column" ><span class="current"><font size="4" color="OrangeRed">基本信息</font></span></div>
+		      	<table class="kv-table">
+					<tbody>
+						<tr>
+							<td class="kv-label">教练姓名</td>
+							<td class="kv-content" id="coaname"></td>
+							<td class="kv-label">出生日期</td>
+							<td class="kv-content" id="coabirthday"></td>
+						</tr>
+						<tr>
+							<td class="kv-label">联系方式</td>
+							<td class="kv-content" id="coaphonenumber"></td>
+							<td class="kv-label">email</td>
+							<td class="kv-content" id="coaemail"></td>
+						</tr>
+						<tr>
+							<td class="kv-label">训练中心</td>
+							<td class="kv-content" id="coaclubname"></td>
+							<td class="kv-label">学员人数</td>
+							<td class="kv-content" id="coastunum"></td>
+						</tr>
+					</tbody>
+				</table>
+	    </div>
+      </div>
+     </div>
+    </div>
+<script type="text/javascript" src="../custom/jquery.min.js"></script>
+<script type="text/javascript" src="../custom/jquery.easyui.min.js"></script>
+<script type="text/javascript">
+$(".attached-tab").on("click","a",function(){
+        $(this).closest(".attached-tab").find("a").removeClass("current");
+        $(this).addClass("current");
+        $(this).closest(".attached").find("ul").addClass("hide");   
+        $(this).closest(".attached").find("ul." + $(this).attr("attached")).removeClass("hide");    
+});
+$(function(){
+	  $.post("../../getFriendforum",function(result){
+		  for(var i=0;i<result.forumrows.length;i++){ 
+			  $("div#friendforum").find("a#friendforum"+i).attr({href:result.forumrows[i].forumurl});
+			  $("div#friendforum").find("a#friendforum"+i).text(result.forumrows[i].forumname);     
+			  }  
+	 	  },"json");
+	  $.post("../../getNews",function(result){
+		  for(var i=0;i<result.news.length;i++){ 
+				  $("div#news").find("a#news"+i).text(result.news[i].name);
+				  $("div#news").find("a#news"+i).attr({href:"javascript:newsdetail("+result.news[i].Id+")"});
+				  $("div#news").find("label#news"+i).text(result.news[i].addtime.substr(5,5));   
+				}  
+	 	  },"json");
+	  $.post("../../getDisplay",function(result){
+		  for(var i=0;i<result.club.length;i++){ 
+			  $("div#display").find("a#clubdisplay"+i).text(result.club[i].clubname);	
+		      $("div#display").find("a#clubdisplay"+i).attr({href:"javascript:displayclub("+result.club[i].clubId+")"}); 
+			}  
+		  for(var i=0;i<result.coach.length;i++){ 
+			  $("div#display").find("a#coachdisplay"+i).html(result.coach[i].coaname+"<label id="+i+">"+result.coach[i].clubname+"</label>");	
+		      $("div#display").find("a#coachdisplay"+i).attr({href:"javascript:displaycoach("+result.coach[i].coaId+","+i+")"});
+			}  
+	 	  },"json");
+});
+function displayclub(Id){
+	$('#clubdlg').dialog('open');
+	$.post("../../personalInformation",{
+		identity:3,
+    	Id:Id,
+    },function(result){
+    	$('#clubname').text(result.result[0].clubname);
+        $('#clubaddress').text(result.result[0].address);
+        $('#clubphonenumber').text(result.result[0].phonenumber);
+        $('#clubemail').text(result.result[0].email);
+        $('#clubprovince').text(result.result[0].province);
+        $('#website').html("<a target='_blank' href="+result.result[0].website+">"+result.result[0].website+"</a>");
+    },'json');
+	$.post("../../coaStuNum",{
+    	clubId:Id,
+    },function(result){
+    	// console.info(result);
+    	 $('#clubcoanum').text(result.coanum);
+    	 $('#clubstunum').text(result.stunum);
+    },'json');
+}
+function displaycoach(Id,i){
+	$('#coadlg').dialog('open');
+	$.post("../../personalInformation",{
+		identity:2,
+    	Id:Id,
+    },function(result){
+    	$('#coaname').text(result.result[0].coaname);
+        $('#coabirthday').text(result.result[0].birthday);
+        $('#coaphonenumber').text(result.result[0].phonenumber);
+        $('#coaemail').text(result.result[0].email);
+        $('#coaclubname').text($('label#'+i).text());
+    },'json');
+	$.post("../../coaStuNum",{
+		  coaId:Id,
+	    },function(result){
+		 $('#coastunum').text(result.stunum);
+	  },'json');
+}
+var map = null,
+    geochina = 'https://data.jianshukeji.com/jsonp?filename=geochina/',
+    unDrilldown = ['taiwan', 'xianggang', 'aomen'];
+// 获取中国地图数据并初始化图表
+$.post("../../getDistribution",function(result){
+$.getJSON(geochina + 'china.json&callback=?', function(mapdata) {
+    map = new Highcharts.Map('chart1', {
+        title: {
+            text: null
+        },
+        subtitle: {
+            text: null
+        },
+        mapNavigation: {
+            enabled: true,
+            buttonOptions: {
+                verticalAlign: 'bottom'
+            }
+        },
+        tooltip: {
+        	formatter:function(){
+				var htm="学员分布<br/>";
+				htm+=this.point.name;
+				htm+=":"+this.point.value;
+				 return htm;				 
+			}
+        },
+        colorAxis: {
+            min:result.min,
+            max:result.max,
+            minColor: '#fff',
+            maxColor: '#FF0000',
+            labels:{
+                style:{
+                    "color":"red","fontWeight":"bold"
+                }
+            }
+        },
+        credits:{
+			enabled:false
+         },
+        legend: {
+			 // enabled: false,
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'middle',
+              floating:true
+         },
+        series: [{
+            data: result.distribution,
+            mapData: mapdata,
+            joinBy: 'name',
+            name: '中国地图',
+            states: {
+                hover: {
+                    color: '#FF8C00'
+                }
+            }
+        }]
+    });
+});
+},'json');
+$(function(){
+	$.post('../../phonePCDataChart',function(result){
+		 for(var i = 0 ;i<result.pcshuttlerun.length;i++)
+			 {
+				if(result.pcshuttlerun[i]==null){
+			          result.pcshuttlerun.splice(i,1);
+			         i= i-1;
+			       }
+			}
+		 for(var i = 0 ;i<result.pcbenchpress.length;i++)
+				 {
+					if(result.pcbenchpress[i]==null){
+				          result.pcbenchpress.splice(i,1);
+				         i= i-1;
+				       }
+				}
+		 for(var i = 0 ;i<result.pc50meters.length;i++)
+				 {
+					if(result.pc50meters[i]==null){
+				          result.pc50meters.splice(i,1);
+				         i= i-1;
+				       }
+				}
+		 for(var i = 0 ;i<result.pc1000meters.length;i++)
+				 {
+					if(result.pc1000meters[i]==null){
+				          result.pc1000meters.splice(i,1);
+				         i= i-1;
+				       }
+				}
+		 for(var i = 0 ;i<result.pcsetshot.length;i++)
+				 {
+					if(result.pcsetshot[i]==null){
+				          result.pcsetshot.splice(i,1);
+				         i= i-1;
+				       }
+				}
+		 for(var i = 0 ;i<result.phoneshuttlerun.length;i++)
+				 {
+					if(result.phoneshuttlerun[i]==null){
+				          result.phoneshuttlerun.splice(i,1);
+				         i= i-1;
+				       }
+				}
+		 for(var i = 0 ;i<result.phonebenchpress.length;i++)
+				 {
+					if(result.phonebenchpress[i]==null){
+				          result.phonebenchpress.splice(i,1);
+				         i= i-1;
+				       }
+				}
+		 for(var i = 0 ;i<result.phone50meters.length;i++)
+				 {
+					if(result.phone50meters[i]==null){
+				          result.phone50meters.splice(i,1);
+				         i= i-1;
+				       }
+				}
+		 for(var i = 0 ;i<result.phone1000meters.length;i++)
+				 {
+					if(result.phone1000meters[i]==null){
+				          result.phone1000meters.splice(i,1);
+				         i= i-1;
+				       }
+				}
+		 for(var i = 0 ;i<result.phonesetshot.length;i++)
+				 {
+					if(result.phonesetshot[i]==null){
+				          result.phonesetshot.splice(i,1);
+				         i= i-1;
+				       }
+				}
+		 //console.info(result);
+			//alert(array);
+		var chart = new Highcharts.Chart('chart2', {
+		    title: {
+		        text:null
+		    },
+		    subtitle: {
+		        text:null
+		    },
+		    credits: {
+	        	enabled: false
+	        },
+		    xAxis: {
+		        categories: result.xAxis
+		    },
+		    yAxis: {
+		        title: {
+		            text: '提交次数'
+		        }
+		    },
+		    tooltip: {
+		        valueSuffix: '/次'
+		    },
+		    legend: {
+		        layout: 'vertical',
+		        align: 'right',
+		        padding: 0,
+		        verticalAlign: 'middle',
+		        borderWidth: 0
+		    },
+		    series: [{
+		        name: 'PC端折返跑',
+		        data: result.pcshuttlerun
+		    }, {
+		        name: 'PC端卧推',
+		        data: result.pcbenchpress
+		    }, {
+		        name: 'PC端50米跑',
+		        data: result.pc50meters
+		    }, {
+		        name: 'PC端1000米跑',
+		        data: result.pc1000meters
+		    },{
+		        name: 'PC端定点投篮',
+		        data: result.pcsetshot
+		    }, {
+		        name: '手机端折返跑',
+		        data: result.phoneshuttlerun
+		    }, {
+		        name: '手机端卧推',
+		        data: result.phonebenchpress
+		    }, {
+		        name: '手机端50米跑',
+		        data: result.phone50meters
+		    }, {
+		        name: '手机端1000米跑',
+		        data: result.phone1000meters
+		    }, {
+		        name: '手机端定点投篮',
+		        data: result.phonesetshot
+		    }]
+		});
+	},'json');
+	$.post('../../getAge',function(result){
+		//console.info(result.youngth);
+		new Highcharts.Chart('chart3', {
+	        chart: {
+	            plotBackgroundColor: null,
+	            plotBorderWidth: null,
+	            plotShadow: false
+	        },
+	        title: {
+	            text: null
+	        },
+	        credits: {
+	        	enabled: false
+	        },
+	        tooltip: {
+	            headerFormat: '{series.name}<br>',
+	            pointFormat:  '{point.name}: <b>{point.percentage:.1f}%</b>'
+	        },
+	        plotOptions: {
+	            pie: {
+	                allowPointSelect: true,
+	                cursor: 'pointer',
+	                dataLabels: {
+	                    enabled: false
+	                },
+	                showInLegend: true
+	            }
+	        },
+	        series: [{
+	            type: 'pie',
+	            name: '学员年龄分布',
+	            data: [
+	                ['儿童(0-9)',   result.children],
+	                ['少年(10-15)', result.juvenile],
+	                ['青年(16-24)',  result.youngth],
+	            ]
+	        }]
+	    });
+	},'json')
+})
+function newsdetail(Id){
+	location.href="news.jsp?"+"Id="+encodeURI(Id);
+}
+//	if($("#tt").tabs('exists',"新闻")){
+//		$("#tt").tabs('select',"新闻");
+//	}else{
+//		var content="<iframe frameborder='0' scrolling='auto' style='width:100%;height:100%' src='process.html'></iframe>";
+//		$("#tt").tabs('add',{
+//			title:'新闻',
+//			closable:true,
+//			content:content
+//		});
+//}
+//}
+</script>
+</body> 
+</html>

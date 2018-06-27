@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <title>公告详情</title>
+        <link rel="stylesheet" href="../h5/fonts/iconfont.css"/>
+        <link rel="stylesheet" href="../h5/css/font.css"/>
+        <link rel="stylesheet" href="../h5/css/weui.min.css"/>
+        <link rel="stylesheet" href="../h5/css/jquery-weui.min.css"/>
+        <link rel="stylesheet" href="../h5/css/mui.css"/>
+        <link rel="stylesheet" href="../h5/css/animate.css"/>
+        <link rel="stylesheet" href="../h5/css/pages/notice_detail.css"/>
+        <script type="text/javascript" src="../custom/jquery.min.js"></script>
+        <script type="text/javascript">
+        (function (doc, win) {
+          var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+              var clientWidth = docEl.clientWidth;
+              if (!clientWidth) return;
+              docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+
+          if (!doc.addEventListener) return;
+          win.addEventListener(resizeEvt, recalc, false);
+          doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+        window.onload=function getNotice(){
+      	  $.post("../../getNotice",function(result){
+      		//$("p").text("Hello world!");
+      		 $("h1#name").text(result.notice[0].name); 
+      	     $("article#content").find("p#content").text(result.notice[0].content); 
+      	     $("article#content").find("div#username").text("发布人："+result.notice[0].username);
+      	     $("article#content").find("div#addtime").text("时间："+result.notice[0].addtime); 
+      	 	  },"json");
+        }
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="titlebar reverse">
+                <h1 id="name">公告</h1>
+            </div>
+        </header>
+         <div>
+        <article id="content" class="weui_article">
+            <br>
+            <b><p id="content"></p></b>
+            <div id="username"style="position:absolute;right:0;bottom:20px"></div>
+            <div id="addtime"style="position:absolute;right:0;bottom:0"></div>
+        </article>
+        </div>
+        
+    </body>
+</html>

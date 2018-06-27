@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+<title>篮球青少年大数据平台</title>
+<link rel="stylesheet" href="fonts/iconfont.css"/>
+<link rel="stylesheet" href="css/font.css"/>
+<link rel="stylesheet" href="css/mui.css"/>
+<link rel="stylesheet" href="css/weui.min.css"/>
+<link rel="stylesheet" href="css/jquery-weui.min.css"/>
+<link rel="stylesheet" href="css/animate.css"/>
+<link rel="stylesheet" href="css/pages/login.css"/>
+<link rel="stylesheet" href="../custom/uimaker/easyui.css">
+<script type="text/javascript" src="../custom/jquery.min.js"></script>
+<script type="text/javascript" src="../custom/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../custom/easyui-lang-zh_CN.js"></script>
+<script>
+   (function (doc, win) {
+          var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+              var clientWidth = docEl.clientWidth;
+              if (!clientWidth) return;
+              docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+
+          if (!doc.addEventListener) return;
+          win.addEventListener(resizeEvt, recalc, false);
+          doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+   var loc = location.href;
+   var n1 = loc.length;//地址的总长度
+   var n2 = loc.indexOf("=");//取得=号的位置
+   var rst = decodeURI(loc.substr(n2+1, n1-n2));//从=号后面的内容
+$(function(){
+   	   if(rst==1){
+   		   $.messager.show({
+   				title:'提示',
+   				msg:"用户名或密码不能为空",
+   				timeout:1000,
+   				showType:'fade'
+   			});
+   	   }else if(rst==2){
+   		   $.messager.show({
+   				title:'提示',
+   				msg:"用户名或密码错误",
+   				timeout:1000,
+   				showType:'fade'
+   			});
+   	   }
+})
+   </script>
+    </head>
+    <body>
+        <div class="header">
+            <img src="images/logo.png">
+
+            <h2>篮球青少年大数据平台</h2>
+        </div>
+        <div class="login-wrap">
+            <div class="login-box">
+                <form id="fm" method="post" action="../../phoneLogin">
+                    <div class="input-wrap">
+                        <input type="text" name="username" placeholder="账号/邮箱">
+                    </div>
+                    <div class="input-wrap">
+                        <input type="password" name="password" placeholder="密码">
+                    </div>           
+                </form>
+            </div>
+            <div class="btns" align="center">
+                <a href="javascript:;" class="current">训练信息录取系统：教练端</a>
+            </div>
+            <a href="javascript:document:fm.submit();" class="weui_btn login-btn weui_btn_primary">登录</a>                    
+        </div>
+        <div class="footer">
+                                       北京化工大学&nbsp;&copy;&nbsp;李浩铭&nbsp;版权所有
+        </div>
+    </body>
+</html>
